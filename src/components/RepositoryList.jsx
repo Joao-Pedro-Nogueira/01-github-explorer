@@ -1,13 +1,21 @@
+import { useState } from 'react';
 import { RepositoryItem } from "./RepositoryItem";
+import '../styles/repositories.scss';
+
+
+// https://api.github.com/users/Joao-Pedro-Nogueira/repos
+
 
 const repository = {
-  name: 'ConfigurandoAmbienteReact.js',
-  description: 'Este repositório é basicamente um "tutorial" de como fazer a configuração básica de desenvolvimento em React.js do zero. Utilizo visual Studio Code em todo o processo.',
-  link: 'https://github.com/Joao-Pedro-Nogueira/ConfigurandoAmbienteReact.js'
+  name: 'unform',
+  description: 'Forms in ReactJS',
+  link: 'https://github.com'
 
 }
 
 export function ReposotoryList() {
+  const [repositories, setRepositories] = useState([]);
+
   return (
     <section className="repository-list">
       <h1>Lista de repositórios</h1>
